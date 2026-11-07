@@ -2,20 +2,24 @@
 
 A machine learning project that compares five classifiers for identifying dry bean varieties from 16 numerical measurements. The Streamlit dashboard lets you evaluate labeled test data, compare model scores, and inspect class-level results.
 
-**Repository:** [aishwaryarani-codes/dry-bean-classifier](https://github.com/aishwaryarani-codes/dry-bean-classifier)  
-**Live app:** Add the Streamlit Community Cloud URL after deployment.
+**Repository:** [aishwaryarani-codes/dry-bean-classifier](https://github.com/aishwaryarani-codes/dry-bean-classifier/tree/feature/initialCode)  
+**Live app:** [dry-bean-classifier-aishwarya.streamlit.app](https://dry-bean-classifier-aishwarya.streamlit.app/)
 
-## Project overview
+## a. Problem statement
 
 Dry bean images can be summarized by geometric measurements such as area, perimeter, axis lengths, compactness, and shape factors. This project uses those measurements to predict one of seven bean varieties and compares five standard classification methods on the same held-out test set.
 
-## Dataset
+## b. Dataset description
 
 The project uses the [UCI Dry Bean dataset](https://archive.ics.uci.edu/dataset/602/dry%2Bbean) (dataset ID 602). It contains **13,611 instances**, **16 numeric features**, and the target label `Class`, with seven varieties: Barbunya, Bombay, Cali, Dermason, Horoz, Seker, and Sira. UCI reports no missing values.
 
 The measurements were extracted from bean images using computer vision. This project uses the tabular measurements rather than the source images. The dataset is licensed under CC BY 4.0. Please credit the [UCI dataset](https://doi.org/10.24432/C50S4B) when reusing it.
 
-## Models and evaluation
+## c. GitHub Repository Link
+
+The repository contains the training and evaluation code, Streamlit app, dependency list, labeled held-out test CSV, saved model pipelines, and experiment results.
+
+## d. Models used
 
 The data is divided into a stratified 80% training set and 20% test set with `random_state=42` (10,888 training rows and 2,723 test rows). Scaling is included in pipelines for Logistic Regression, K-Nearest Neighbors, and Support Vector Machine so each scaler is fit using training data only.
 
@@ -29,9 +33,22 @@ Precision, recall, and F1 are macro averages. AUC is one-vs-rest macro using pre
 | Gaussian Naive Bayes | 0.7639 | 0.9672 | 0.7744 | 0.7694 | 0.7677 | 0.7154 |
 | Support Vector Machine | **0.9229** | **0.9948** | **0.9360** | **0.9340** | **0.9350** | **0.9067** |
 
-On this held-out split, the Support Vector Machine has the strongest overall results, leading on accuracy, macro precision, recall, F1, and MCC. Logistic Regression ties it on AUC. These figures describe this test split and may differ on new data.
+### Model observations
 
-## Streamlit dashboard
+| Model | Observation |
+|---|---|
+| Logistic Regression | A strong linear baseline with 0.9207 accuracy and 0.9329 macro F1. Its MCC (0.9042) is close to the best model. |
+| Decision Tree | Accuracy (0.8884) and macro F1 (0.9036) are lower than the other models except Naive Bayes. It is the most interpretable individual tree in this comparison. |
+| K-Nearest Neighbors | Second-highest accuracy (0.9166) and macro F1 (0.9292). Scaling supports its distance-based comparisons. |
+| Gaussian Naive Bayes | Lowest accuracy (0.7639), macro F1 (0.7677), and MCC (0.7154), though its AUC (0.9672) is higher than the Decision Tree's. |
+| Support Vector Machine | Best accuracy (0.9229), macro precision (0.9360), macro recall (0.9340), macro F1 (0.9350), and MCC (0.9067); it ties Logistic Regression on AUC (0.9948). |
+| **Overall winner** | **Support Vector Machine** leads on five of the six measures and ties for AUC on this held-out split. |
+
+These figures describe this test split and may differ on new data.
+
+## e. Streamlit app
+
+**Live app:** [https://dry-bean-classifier-aishwarya.streamlit.app/](https://dry-bean-classifier-aishwarya.streamlit.app/)
 
 The dashboard loads the saved models and does not retrain on uploaded data. It supports:
 
