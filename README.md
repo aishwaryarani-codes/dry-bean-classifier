@@ -3,7 +3,7 @@
 A machine learning project that compares five classifiers for identifying dry bean varieties from 16 numerical measurements. The Streamlit dashboard lets you evaluate labeled test data, compare model scores, and inspect class-level results.
 
 **Repository:** [aishwaryarani-codes/dry-bean-classifier](https://github.com/aishwaryarani-codes/dry-bean-classifier/tree/feature/initialCode)  
-**Live app:** [dry-bean-classifier-aishwarya.streamlit.app](https://dry-bean-classifier-aishwarya.streamlit.app/)
+**Live app:** [dry-bean-classifier-aishwaryarani.streamlit.app](https://dry-bean-classifier-aishwaryarani.streamlit.app/)
 
 ## a. Problem statement
 
@@ -48,7 +48,7 @@ These figures describe this test split and may differ on new data.
 
 ## e. Streamlit app
 
-**Live app:** [https://dry-bean-classifier-aishwarya.streamlit.app/](https://dry-bean-classifier-aishwarya.streamlit.app/)
+**Live app:** [https://dry-bean-classifier-aishwaryarani.streamlit.app/](https://dry-bean-classifier-aishwaryarani.streamlit.app/)
 
 The dashboard loads the saved models and does not retrain on uploaded data. It supports:
 

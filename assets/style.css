@@ -170,6 +170,29 @@ html, body, [data-testid="stAppViewContainer"], .stApp,
     background: #ffffff !important;
 }
 
+[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] button,
+[data-testid="stDownloadButton"] button {
+    width: 100%;
+    min-height: 2.5rem;
+    box-sizing: border-box;
+    border: 1px solid #c9d9ce !important;
+    border-radius: 10px !important;
+    background: #eaf4ee !important;
+    color: #345a43 !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] button {
+    font-size: 0 !important;
+    width: calc(100% + 1.5rem) !important;
+    margin-left: -.75rem !important;
+}
+
+[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] button::after {
+    content: "Upload test CSV";
+    font-size: .9rem;
+}
+
 [data-testid="stAlert"] {
     border-radius: 12px;
 }

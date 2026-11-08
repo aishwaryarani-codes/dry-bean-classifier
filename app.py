@@ -74,6 +74,15 @@ with st.sidebar:
     st.caption("Choose a model and evaluate labeled bean measurements.")
     selected_model = st.selectbox("Choose a classifier", list(models))
     uploaded = st.file_uploader("Upload labeled test data (CSV)", type=["csv"])
+    sample_path = ROOT / "test_data.csv"
+    if sample_path.exists():
+        st.download_button(
+            "Download sample test CSV",
+            data=sample_path.read_bytes(),
+            file_name="sample_test_data.csv",
+            mime="text/csv",
+            use_container_width=True,
+        )
     st.caption("The CSV must contain all 16 feature columns and the `Class` target column.")
 
 if uploaded is None:
