@@ -1,0 +1,36 @@
+{
+  "dataset": "UCI Dry Bean (dataset id 602)",
+  "target": "Class",
+  "feature_columns": [
+    "Area",
+    "Perimeter",
+    "MajorAxisLength",
+    "MinorAxisLength",
+    "AspectRatio",
+    "Eccentricity",
+    "ConvexArea",
+    "EquivDiameter",
+    "Extent",
+    "Solidity",
+    "Roundness",
+    "Compactness",
+    "ShapeFactor1",
+    "ShapeFactor2",
+    "ShapeFactor3",
+    "ShapeFactor4"
+  ],
+  "classes": [
+    "BARBUNYA",
+    "BOMBAY",
+    "CALI",
+    "DERMASON",
+    "HOROZ",
+    "SEKER",
+    "SIRA"
+  ],
+  "train_rows": 10888,
+  "test_rows": 2723,
+  "test_size": 0.2,
+  "random_state": 42,
+  "metrics": "Accuracy; macro one-vs-rest AUC; macro precision/recall/F1; multiclass MCC"
+}
